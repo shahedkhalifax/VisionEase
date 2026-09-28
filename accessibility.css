@@ -1,0 +1,116 @@
+/**
+ * High-priority CSS rules utilizing custom variables set by content.js
+ */
+
+:root {
+  --ve-font-factor: 1.0;
+  --ve-line-height: 1.5;
+  --ve-letter-spacing: 0em;
+  --ve-para-spacing: 0em;
+  --ve-fg-color: #ffffff;
+  --ve-bg-color: #000000;
+  --ve-zoom: 1.0;
+}
+
+/* Typography Overrides */
+html.ve-active p,
+html.ve-active li,
+html.ve-active h1,
+html.ve-active h2,
+html.ve-active h3,
+html.ve-active h4,
+html.ve-active h5,
+html.ve-active h6,
+html.ve-active a,
+html.ve-active span,
+html.ve-active label,
+html.ve-active input,
+html.ve-active button {
+  line-height: var(--ve-line-height) !important;
+  letter-spacing: var(--ve-letter-spacing) !important;
+}
+
+html.ve-active p {
+  margin-bottom: calc(1em + var(--ve-para-spacing)) !important;
+}
+
+html.ve-font-boost p,
+html.ve-font-boost span,
+html.ve-font-boost a,
+html.ve-font-boost li,
+html.ve-font-boost label {
+  font-weight: 600 !important;
+}
+
+/* High Contrast & Custom Color Themes */
+html.ve-mode-yellow {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+}
+
+html.ve-mode-yellow *,
+html.ve-mode-yellow *:not(img):not(video):not(canvas):not([role="img"]) {
+  background-color: #000000 !important;
+  color: #ffff00 !important;
+  border-color: #ffff00 !important;
+}
+
+html.ve-mode-dark {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+html.ve-mode-dark *:not(img):not(video):not(canvas):not([role="img"]) {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+  border-color: #444444 !important;
+}
+
+html.ve-mode-light {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+html.ve-mode-light *:not(img):not(video):not(canvas):not([role="img"]) {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #cccccc !important;
+}
+
+html.ve-mode-custom *:not(img):not(video):not(canvas):not([role="img"]) {
+  background-color: var(--ve-bg-color) !important;
+  color: var(--ve-fg-color) !important;
+  border-color: var(--ve-fg-color) !important;
+}
+
+/* High Visibility Focus Ring */
+html.ve-enhanced-focus *:focus-visible {
+  outline: 4px solid #ffff00 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 7px #000000 !important;
+}
+
+/* Oversized SVG Cursor */
+html.ve-oversized-cursor,
+html.ve-oversized-cursor * {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="%23ffff00" stroke="%23000000" stroke-width="2"><path d="M3 3l7 18 3-7 7-3L3 3z"/></svg>'), auto !important;
+}
+
+/* Reduced Motion Override */
+html.ve-reduce-motion *,
+html.ve-reduce-motion *::before,
+html.ve-reduce-motion *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}
+
+/* Simplified Reading Mode */
+html.ve-simplified-reading ads,
+html.ve-simplified-reading iframe,
+html.ve-simplified-reading [role="complementary"],
+html.ve-simplified-reading .ad,
+html.ve-simplified-reading .advertisement,
+html.ve-simplified-reading .sidebar {
+  display: none !important;
+}
